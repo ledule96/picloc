@@ -6,7 +6,7 @@ function fetchUsers(){
     var request = getRequestObject();
 
     if(request != null){
-        var url = "https://picloc.herokuapp.com/get_users";
+        var url = "https://cors-anywhere.herokuapp.com/https://picloc.herokuapp.com/get_users";
 
         request.open("GET", url, true);
         request.onreadystatechange = function(){
@@ -19,7 +19,8 @@ function fetchUsers(){
                 tbody.innerHTML = "";
 
                 for(let i = 0; i < usersJSONArray.length; i++){
-                    tbody.innerHTML += "<tr><td>" + usersJSONArray[i].name + "</td><td>" + usersJSONArray[i].surname + "</td><td>" + usersJSONArray[i].username + "</td></tr>"
+                    tbody.innerHTML += "<tr><td>" + usersJSONArray[i].name + "</td><td>" + usersJSONArray[i].surname + "</td><td>" 
+                    + usersJSONArray[i].username + "</td><td><a href='user.html?username=" + usersJSONArray[i].username  + "'>See info</a></td></tr>"
                 }
             }
         }
