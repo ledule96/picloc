@@ -1,0 +1,11 @@
+th, tr {
+    width: 25%
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-style: solid;
+    font-size: 18pt;
+    text-align: center;
+}
