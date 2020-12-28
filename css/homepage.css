@@ -1,5 +1,6 @@
-th, tr {
-    width: 25%
+th, tr, td {
+    width: 25%;
+    border-style: solid;
 }
 
 table {
