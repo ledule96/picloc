@@ -15,18 +15,25 @@ function fetchUsers(){
 
                 var usersJSONArray = usersJSON.users;
 
-                var tbody = document.getElementById("homepage-table-body");
+                var tbody = document.getElementById("id-homepage-table-body");
                 tbody.innerHTML = "";
 
                 for(let i = 0; i < usersJSONArray.length; i++){
                     tbody.innerHTML += "<tr><td>" + usersJSONArray[i].name + "</td><td>" + usersJSONArray[i].surname + "</td><td>" 
-                    + usersJSONArray[i].username + "</td><td><a href='user.html?username=" + usersJSONArray[i].username  + "'>See info</a></td></tr>"
+                    + usersJSONArray[i].username + "</td><td><a href='user.html' onclick=\"onClick('" + usersJSONArray[i].name + "', '" + usersJSONArray[i].surname + "', '"
+                    + usersJSONArray[i].username + "')\">See info</a></td></tr>"
                 }
             }
         }
 
         request.send();
     }
+}
+
+function onClick(name, surname, username){
+    sessionStorage.setItem("name", name);
+    sessionStorage.setItem("surname", surname);
+    sessionStorage.setItem("username", username);
 }
 
 function getRequestObject(){
