@@ -6,8 +6,8 @@ function fetchUsers(){
     var request = getRequestObject();
 
     if(request != null){
-        var url = "https://cors-anywhere.herokuapp.com/https://picloc.herokuapp.com/get_users";
-
+        //var url = "https://cors-anywhere.herokuapp.com/https://picloc.herokuapp.com/get_users";
+		var url = "https://picloc.herokuapp.com/get_users";
         request.open("GET", url, true);
         request.onreadystatechange = function(){
             if(request.readyState == 4 && request.status == 200){

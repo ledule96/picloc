@@ -16,7 +16,8 @@ function fetchInternalImages(){
     var request = getRequestObject();
 
     if(request != null){
-        var url = "https://cors-anywhere.herokuapp.com/https://picloc.herokuapp.com/get_user_internal_images/" + sessionStorage.getItem("username");
+        //var url = "https://cors-anywhere.herokuapp.com/https://picloc.herokuapp.com/get_user_internal_images/" + sessionStorage.getItem("username");
+		var url = "https://picloc.herokuapp.com/get_user_internal_images/" + sessionStorage.getItem("username");
 
         request.open("GET", url, true);
         request.onreadystatechange = function(){
